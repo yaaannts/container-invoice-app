@@ -1,0 +1,36 @@
+{
+"name": "container-invoice-app",
+"version": "1.0.0",
+"description": "Professional Container Invoice Generator for
+Windows and Android",
+"main": "electron.js",
+"scripts": {"start": "electron .",
+"dist-win": "electron-builder --win --x64",
+"dist-android": "npx cap sync android && npx cap open android",
+"postinstall": "electron-builder install-app-deps"
+},
+"build": {
+"appId": "com.invoicegenerator.app",
+"productName": "ProInvoice Containers",
+"directories": {
+"output": "dist"
+},
+"win": {
+"target": "nsis",
+"icon": "icon.png"
+},
+"nsis": {
+"oneClick": false,
+"allowToChangeInstallationDirectory": true
+  }
+},
+"dependencies": {
+"@capacitor/android": "^6.0.0",
+"@capacitor/core": "^6.0.0",
+"@capacitor/cli": "^6.0.0"
+},
+"devDependencies": {
+"electron": "^28.0.0",
+"electron-builder": "^24.9.1"
+  }
+}
